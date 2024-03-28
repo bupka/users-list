@@ -24,3 +24,29 @@ select {
 button:focus {
   outline: none;
 }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+aside {
+  background-color: #395b64;
+  width: 40%;
+  height: 100vh;
+  float: left;
+}
+
+.user-input-data {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-content: center;
+  background-color: #a5c9ca;
+}

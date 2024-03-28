@@ -10,7 +10,22 @@
   <body>
     <aside>
       <div class="user-input-data">
-        <label for="full-name"></label>
+        <label for="full-name">Your name:</label>
+        <input type="text" name="full-name" id="full-name" />
+
+        <fieldset>
+          <legend>Select your role:</legend>
+
+          <input type="radio" name="front-end" id="front-end" />
+          <label for="front-end">Front-end</label>
+
+          <input type="radio" name="back-end" id="back-end" />
+          <label for="back-end">Back-end</label>
+
+          <input type="radio" name="full-stack" id="full-stack" />
+          <label for="full-stack">Full-stack</label>
+        </fieldset>
+        <button>Submit</button>
       </div>
     </aside>
     <main></main>
