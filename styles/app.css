@@ -36,17 +36,118 @@ h6 {
 }
 
 aside {
+  position: absolute;
   background-color: #395b64;
-  width: 40%;
+  width: 30%;
   height: 100vh;
   float: left;
 }
 
+main {
+  width: 70%;
+  height: 100vh;
+  float: right;
+  background-color: #eeeeee;
+}
+
 .user-input-data {
-  margin: 10px;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   align-content: center;
   background-color: #a5c9ca;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  background: #f67722;
+  border: 1px solid #f67722;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background: #f3cc4b;
+  border-color: #f3cc4b;
+  color: #995200;
+}
+
+fieldset {
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 500px;
+  padding: 16px;
+  border: none;
+}
+
+fieldset legend {
+  background-color: #31363f;
+  color: #fff;
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+
+fieldset label {
+  margin: 0.5rem 0;
+}
+
+input {
+  padding-left: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 0.4rem 0.2rem;
+}
+
+input::before {
+  content: "";
+  padding-left: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#users-data {
+  margin: 1rem 2rem;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+}
+
+.content-table thead tr {
+  background-color: #31363f;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #31363f;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #31363f;
 }
