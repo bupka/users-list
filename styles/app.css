@@ -36,7 +36,6 @@ h6 {
 }
 
 aside {
-  position: absolute;
   background-color: #395b64;
   width: 30%;
   height: 100vh;
@@ -51,11 +50,6 @@ main {
 }
 
 .user-input-data {
-  position: absolute;
-  top: 30%;
-  left: 5%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   margin: 2rem;
   padding: 2rem;
   display: flex;
@@ -125,11 +119,13 @@ input:focus {
 }
 
 .content-table {
+  margin: 2rem;
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
 }
 
 .content-table thead tr {
