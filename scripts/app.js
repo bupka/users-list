@@ -1,30 +1,53 @@
 const inputText = document.querySelector("#full-name");
+const inputRole = document.getElementsByName("role");
 const submitBtn = document.querySelector("button");
+const entryTextSection = document.getElementById("entry-text");
 
-const validationRadio = () => {
-  let valid = false;
-  let radios = document.getElementsByName("role");
+let users = [];
 
-  for (let i = 0; i < radios.length; i++) {
-    if (radios[i].checked) {
-      valid = true;
-      break;
+const userData = () => {
+  const userInputData = inputText.value;
+  let roleData;
+
+  if (userInputData.trim() === "") {
+    alert("Please fill the input field");
+    return;
+  }
+  console.log("User input is:", userInputData);
+
+  for (let i = 0; i < inputRole.length; i++) {
+    if (inputRole[i].checked) {
+      roleData = inputRole[i].value;
     }
   }
 
-  if (valid) {
-    console.log(first);
-  } else {
-    alert("validation edhe ma mut ");
-  }
-};
-
-submitBtn.addEventListener("click", () => {
-  const textInput = inputText.value;
-
-  if (textInput.trim() === "") {
-    alert("Please enter valid values");
+  if (!roleData) {
+    alert("Please select one of the options");
     return;
   }
-  validationRadio();
-});
+  console.log("Role input is:", roleData);
+
+  const dataObj = {
+    name: userInputData,
+    role: roleData,
+  };
+
+  console.log(dataObj);
+
+  renderUserData(dataObj.name, dataObj.role);
+  inputText.value = "";
+  inputRole.values = "";
+};
+
+const renderUserData = (name, role) => {
+  const userElement = document.createElement("tr");
+  userElement.innerHTML = `
+    <td>${name}</td>
+    <td>${role}</td>
+  `;
+
+  const trTable = document.getElementById("table-body");
+  trTable.append(userElement);
+};
+
+submitBtn.addEventListener("click", userData);
