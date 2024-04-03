@@ -114,39 +114,46 @@ input:focus {
   outline: none;
 }
 
-#users-data {
-  margin: 1rem 2rem;
-}
+/* Users table display */
 
-.content-table {
-  margin: 2rem;
+.users-data {
+  display: none;
+  margin: 30px auto;
   border-collapse: collapse;
   font-size: 0.9em;
   width: 70%;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
+  animation: fade-slide-in 0.3s ease-out forwards;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
 }
 
-.content-table thead tr {
+.users-data.visible {
+  display: block;
+  pointer-events: all;
+}
+
+.users-data thead tr {
   background-color: #31363f;
   color: #fff;
   text-align: left;
   font-weight: bold;
 }
 
-.content-table th,
-.content-table td {
+.users-data th,
+.users-data td {
   padding: 12px 15px;
 }
 
-.content-table tbody tr {
+.users-data tbody tr {
   border-bottom: 1px solid #31363f;
 }
 
-.content-table tbody tr:last-of-type {
+.users-data tbody tr:last-of-type {
   border-bottom: 2px solid #31363f;
 }
+
+/*  */
 
 #entry-text {
   width: 40rem;
@@ -158,4 +165,10 @@ input:focus {
 #entry-text p {
   font-size: 1.5rem;
   text-align: center;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
