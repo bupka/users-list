@@ -11,22 +11,25 @@
     <aside>
       <div class="user-input-data">
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" autocomplete="off" />
 
         <!-- <label for="surname">Surname:</label> -->
         <!-- <input type="text" name="surname" id="surname" /> -->
 
         <fieldset>
           <legend>Select your role:</legend>
-
-          <input type="radio" name="role" id="front-end" value="frontend" />
-          <label for="front-end">Front-end</label>
-
-          <input type="radio" name="role" id="back-end" value="backend" />
-          <label for="back-end">Back-end</label>
-
-          <input type="radio" name="role" id="full-stack" value="fullstack" />
-          <label for="full-stack">Full-stack</label>
+          <div>
+            <input type="radio" name="role" id="front-end" value="frontend" />
+            <label for="front-end">Front-end</label>
+          </div>
+          <div>
+            <input type="radio" name="role" id="back-end" value="backend" />
+            <label for="back-end">Back-end</label>
+          </div>
+          <div>
+            <input type="radio" name="role" id="full-stack" value="fullstack" />
+            <label for="full-stack">Full-stack</label>
+          </div>
         </fieldset>
         <button>Submit</button>
       </div>
