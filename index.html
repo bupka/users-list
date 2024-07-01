@@ -11,22 +11,28 @@
     <aside>
       <div class="user-input-data">
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" autocomplete="off" />
+        <input
+          id="name"
+          class="input-text"
+          type="text"
+          name="name"
+          placeholder="Your name..."
+          autocomplete="off" />
 
         <!-- <label for="surname">Surname:</label> -->
         <!-- <input type="text" name="surname" id="surname" /> -->
 
         <fieldset>
           <legend>Select your role:</legend>
-          <div>
+          <div class="radio-group">
             <input type="radio" name="role" id="front-end" value="frontend" />
             <label for="front-end">Front-end</label>
           </div>
-          <div>
+          <div class="radio-group">
             <input type="radio" name="role" id="back-end" value="backend" />
             <label for="back-end">Back-end</label>
           </div>
-          <div>
+          <div class="radio-group">
             <input type="radio" name="role" id="full-stack" value="fullstack" />
             <label for="full-stack">Full-stack</label>
           </div>
@@ -43,9 +49,9 @@
       <table id="users-data" class="users-data">
         <thead>
           <tr>
-            <th>Fullname</th>
+            <th>EMPLOYEES</th>
             <th>
-              <select name="select" id="select-option">
+              <select name="select" id="mySelect">
                 <option value="front-end">Front-end</option>
                 <option value="back-end">Back-end</option>
                 <option value="fullstack">Fullstack</option>

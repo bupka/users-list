@@ -36,7 +36,7 @@ h6 {
 }
 
 aside {
-  background-color: #395b64;
+  background-color: #6cb5cb;
   width: 30%;
   height: 100vh;
   float: left;
@@ -53,12 +53,11 @@ main {
   margin: 2rem;
   padding: 2rem;
   font-size: 1.5rem;
-
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-content: center;
-  background-color: #a5c9ca;
+  background-color: #b7d8de;
   border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
 }
@@ -66,7 +65,6 @@ main {
 button {
   font: inherit;
   font-size: 1.5rem;
-
   padding: 0.5rem 1rem;
   background: #f67722;
   border: 1px solid #f67722;
@@ -85,7 +83,7 @@ button:active {
 
 fieldset {
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #fbf5ef;
   max-width: 500px;
   padding: 16px;
   border: none;
@@ -105,7 +103,7 @@ fieldset label {
 input {
   border-radius: 10px;
   border: none;
-  padding: 0.4rem 0.2rem;
+  padding: 0.4rem 0.9rem;
 }
 
 input:focus {
@@ -118,6 +116,12 @@ input::before {
   padding-left: 10px;
 }
 
+.radio-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: right;
+}
+
 /* Users table display */
 
 .users-data {
@@ -125,10 +129,10 @@ input::before {
   margin: 30px auto;
   border-collapse: collapse;
   font-size: 1.5rem;
-  width: 50%;
+  width: 60%;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
-  background-color: red;
+  background-color: #fbf5ef;
 }
 
 .users-data.visible {
@@ -137,6 +141,7 @@ input::before {
 }
 
 .users-data thead tr {
+  width: 100%;
   background-color: #31363f;
   color: #fff;
   text-align: left;

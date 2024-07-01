@@ -9,10 +9,11 @@ console.log(table);
 
 const updateUI = () => {
   if (users.length === 0) {
+    table.style.display = "none";
     entryTextSection.style.display = "block";
   } else {
     entryTextSection.style.display = "none";
-    table.classList.add("visible");
+    table.style.display = "table";
   }
 };
 
@@ -63,6 +64,13 @@ const renderUserData = (name, role) => {
 
   const trTable = document.getElementById("table-body");
   trTable.append(userElement);
+  document.getElementById("mySelect").addEventListener("change", filterUser);
+};
+
+const filterUser = () => {
+  const selectEl = document.getElementById("mySelect");
+  const selectedValue = selectEl.value;
+  console.log("Selected value: " + selectedValue);
 };
 
 const capitalizeFirstLetter = (string) => {
