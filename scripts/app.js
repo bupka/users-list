@@ -3,9 +3,9 @@ const inputRole = document.getElementsByName("role");
 const submitBtn = document.querySelector("button");
 const table = document.getElementById("users-data");
 const entryTextSection = document.getElementById("entry-text");
+const selectBtn = document.getElementById("mySelect");
 
 let users = [];
-console.log(table);
 
 const updateUI = () => {
   if (users.length === 0) {
@@ -46,31 +46,53 @@ const userData = () => {
 
   const dataObj = {
     name: capitalizeFirstLetter(userInputData),
-    role: capitalizeFirstLetter(roleData),
+    role: roleData,
   };
 
   users.push(dataObj);
-  renderUserData(dataObj.name, dataObj.role);
+  console.log("Users array:", users); // Log the users array
+  renderUserData(users);
   updateUI();
   clearInputs();
 };
 
-const renderUserData = (name, role) => {
-  const userElement = document.createElement("tr");
-  userElement.innerHTML = `
-    <td>${name}</td>
-    <td>${role}</td>
-  `;
+// const renderUserData = (name, role) => {
+//   const userElement = document.createElement("tr");
+//   userElement.innerHTML = `
+//     <td>${name}</td>
+//     <td>${role}</td>
+//   `;
 
-  const trTable = document.getElementById("table-body");
-  trTable.append(userElement);
-  document.getElementById("mySelect").addEventListener("change", filterUser);
+//   const trTable = document.getElementById("table-body");
+//   trTable.append(userElement);
+// };
+
+const renderUserData = (userData) => {
+  const tbTable = document.getElementById("table-body");
+  tbTable.innerHTML = ""; // Clear existing table data
+
+  userData.forEach((user) => {
+    const userElement = document.createElement("tr");
+    userElement.innerHTML = `
+      <td>${user.name}</td>
+      <td>${user.role}</td>
+    `;
+    tbTable.append(userElement);
+  });
 };
 
 const filterUser = () => {
   const selectEl = document.getElementById("mySelect");
   const selectedValue = selectEl.value;
   console.log("Selected value: " + selectedValue);
+
+  console.log("Users array for filtering:", users);
+
+  const filteredUsers = users.filter((user) => user.role === selectedValue);
+
+  console.log("Filtered users:", filteredUsers);
+
+  renderUserData(filteredUsers); // Render only filtered users
 };
 
 const capitalizeFirstLetter = (string) => {
@@ -78,3 +100,4 @@ const capitalizeFirstLetter = (string) => {
 };
 
 submitBtn.addEventListener("click", userData);
+selectBtn.addEventListener("change", filterUser);
