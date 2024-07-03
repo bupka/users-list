@@ -10,14 +10,16 @@
   <body>
     <aside>
       <div class="user-input-data">
-        <label for="name">Name:</label>
-        <input
-          id="name"
-          class="input-text"
-          type="text"
-          name="name"
-          placeholder="Your name..."
-          autocomplete="off" />
+        <fieldset>
+          <legend class="name-label" for="name">Name:</legend>
+          <input
+            id="name"
+            class="input-text"
+            type="text"
+            name="name"
+            placeholder="Your name..."
+            autocomplete="off" />
+        </fieldset>
 
         <!-- <label for="surname">Surname:</label> -->
         <!-- <input type="text" name="surname" id="surname" /> -->
@@ -51,7 +53,8 @@
           <tr>
             <th>EMPLOYEES</th>
             <th>
-              <select name="select" id="mySelect">
+              <select name="select" id="mySelect" class="costum-select">
+                <option value="all">All</option>
                 <option value="frontend">Frontend</option>
                 <option value="backend">Backend</option>
                 <option value="fullstack">Fullstack</option>

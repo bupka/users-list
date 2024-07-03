@@ -41,35 +41,20 @@ const userData = () => {
     return;
   }
 
-  console.log("User input is:", userInputData);
-  console.log("Role input is:", roleData);
-
   const dataObj = {
     name: capitalizeFirstLetter(userInputData),
     role: roleData,
   };
 
   users.push(dataObj);
-  console.log("Users array:", users); // Log the users array
   renderUserData(users);
   updateUI();
   clearInputs();
 };
 
-// const renderUserData = (name, role) => {
-//   const userElement = document.createElement("tr");
-//   userElement.innerHTML = `
-//     <td>${name}</td>
-//     <td>${role}</td>
-//   `;
-
-//   const trTable = document.getElementById("table-body");
-//   trTable.append(userElement);
-// };
-
 const renderUserData = (userData) => {
   const tbTable = document.getElementById("table-body");
-  tbTable.innerHTML = ""; // Clear existing table data
+  tbTable.innerHTML = "";
 
   userData.forEach((user) => {
     const userElement = document.createElement("tr");
@@ -84,15 +69,13 @@ const renderUserData = (userData) => {
 const filterUser = () => {
   const selectEl = document.getElementById("mySelect");
   const selectedValue = selectEl.value;
-  console.log("Selected value: " + selectedValue);
 
-  console.log("Users array for filtering:", users);
-
-  const filteredUsers = users.filter((user) => user.role === selectedValue);
-
-  console.log("Filtered users:", filteredUsers);
-
-  renderUserData(filteredUsers); // Render only filtered users
+  if (selectedValue === "all") {
+    renderUserData(users);
+  } else {
+    const filteredUsers = users.filter((user) => user.role === selectedValue);
+    renderUserData(filteredUsers);
+  }
 };
 
 const capitalizeFirstLetter = (string) => {

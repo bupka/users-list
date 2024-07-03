@@ -1,3 +1,11 @@
+:root {
+  --navy-blue: #686966;
+  --blue-grotto: #d2d2c8;
+  --blue-green: #eff1e6;
+  --baby-blue: #f0f5ef;
+  --text-white: #f0f5ef;
+}
+
 *,
 *::before,
 *::after {
@@ -5,7 +13,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 body {
@@ -19,6 +27,12 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+select {
+  background-color: inherit;
+  border: none;
+  color: var(--text-white);
 }
 
 button:focus {
@@ -36,7 +50,7 @@ h6 {
 }
 
 aside {
-  background-color: #6cb5cb;
+  background-color: var(--navy-blue);
   width: 30%;
   height: 100vh;
   float: left;
@@ -46,7 +60,7 @@ main {
   width: 70%;
   height: 100vh;
   float: right;
-  background-color: #eeeeee;
+  background-color: var(--baby-blue);
 }
 
 .user-input-data {
@@ -57,7 +71,7 @@ main {
   flex-direction: column;
   gap: 15px;
   align-content: center;
-  background-color: #b7d8de;
+  background-color: var(--blue-grotto);
   border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
 }
@@ -66,9 +80,9 @@ button {
   font: inherit;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  background: #f67722;
-  border: 1px solid #f67722;
-  color: white;
+  background: #e5857b;
+  border: 1px solid #e5857b;
+  color: #f0f5ef;
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
   cursor: pointer;
@@ -76,21 +90,21 @@ button {
 
 button:hover,
 button:active {
-  background: #f3cc4b;
-  border-color: #f3cc4b;
-  color: #995200;
+  background: #f1b2b2;
+  border-color: #f1b2b2;
+  color: var(--text-white);
 }
 
 fieldset {
   border-radius: 10px;
-  background-color: #fbf5ef;
+  background-color: var(--blue-green);
   max-width: 500px;
   padding: 16px;
   border: none;
 }
 
 fieldset legend {
-  background-color: #31363f;
+  background-color: var(--navy-blue);
   color: #fff;
   padding: 3px 9px;
   border-radius: 5px;
@@ -100,6 +114,9 @@ fieldset label {
   margin: 0.5rem 0;
 }
 
+.name-label {
+  color: #fff;
+}
 input {
   border-radius: 10px;
   border: none;
@@ -108,7 +125,7 @@ input {
 
 input:focus {
   outline: none;
-  background: #fff1c4;
+  background: #f0dcd8;
 }
 
 input::before {
@@ -119,7 +136,9 @@ input::before {
 .radio-group {
   display: flex;
   justify-content: flex-start;
-  align-items: right;
+  align-items: center;
+
+  /* align-items: right; */
 }
 
 /* Users table display */
@@ -142,8 +161,8 @@ input::before {
 
 .users-data thead tr {
   width: 100%;
-  background-color: #31363f;
-  color: #fff;
+  background-color: var(--navy-blue);
+  color: #f0f5ef;
   text-align: left;
   font-weight: bold;
 }
@@ -154,9 +173,12 @@ input::before {
 }
 
 .users-data tbody tr {
-  border-bottom: 1px solid #31363f;
+  border-bottom: 1px solid #45496a;
 }
 
+.users-data tbody tr:hover {
+  background-color: #e8ccc7;
+}
 .users-data tbody tr:last-of-type {
   border-bottom: 2px solid #31363f;
 }
